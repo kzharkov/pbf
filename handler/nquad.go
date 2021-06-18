@@ -32,7 +32,7 @@ func (d *Nquad) ReadNode(item gosmparse.Node) {
 		value = strings.Replace(value, `"`, `\"`, -1)
 		value = strings.Replace(value, "\r\n", " ", -1)
 		value = strings.Replace(value, "\n", " ", -1)
-		key = strings.Replace(value, " ", "_", -1)
+		key = strings.Replace(key, " ", "_", -1)
 		fmt.Fprintf(&buffer, "<node.%d> <%s> \"%s\" .\n", item.ID, key, value)
 	}
 
@@ -58,7 +58,7 @@ func (d *Nquad) ReadWay(item gosmparse.Way) {
 		value = strings.Replace(value, `"`, `\"`, -1)
 		value = strings.Replace(value, "\r\n", " ", -1)
 		value = strings.Replace(value, "\n", " ", -1)
-		key = strings.Replace(value, " ", "_", -1)
+		key = strings.Replace(key, " ", "_", -1)
 		fmt.Fprintf(&buffer, "<way.%d> <%s> \"%s\" .\n", item.ID, key, value)
 	}
 
@@ -89,7 +89,7 @@ func (d *Nquad) ReadRelation(item gosmparse.Relation) {
 		value = strings.Replace(value, `"`, `\"`, -1)
 		value = strings.Replace(value, "\r\n", " ", -1)
 		value = strings.Replace(value, "\n", " ", -1)
-		key = strings.Replace(value, " ", "_", -1)
+		key = strings.Replace(key, " ", "_", -1)
 		fmt.Fprintf(&buffer, "<relation.%d> <%s> \"%s\" .\n", item.ID, key, value)
 	}
 
